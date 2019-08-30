@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Light</title>
+</head>
+
+<body>
+    <div id="room" class="on">
+        <div id="bulb"></div>
+        <br>
+        <h2 id="clock">00:00:00 --</h2>
+        <h1>Turn the light</h1>
+        <p>You can turn the light on or off, when you enter it will be on, but sometimes it is better to turn it off.</p>
+        <div id="switch_box">
+            <div id="switch">
+                <div class="button"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const button = document.querySelector('#switch')
+        const room = document.querySelector('#room')
+        button.addEventListener('click', function(e) {
+            let isOn = room.classList.contains('on')
+
+            if (isOn) {
+                room.classList.remove('on')
+                room.classList.add('off')
+            } else {
+                room.classList.add('on')
+                room.classList.remove('off')
+            }
+        })
+
+
+        setInterval(() => {
+            const date = new Date()
+            let iden = 'AM'
+            let hours = date.getHours()
+            if (hours > 12) {
+                hours -= 12
+                iden = 'PM'
+            }
+            hours = (hours < 10) ? `0${hours}` : hours
+
+            let minutes = date.getMinutes()
+            minutes = (minutes < 10) ? `0${minutes}` : minutes
+
+            let seconds = date.getSeconds()
+            seconds = (seconds < 10) ? `0${seconds}` : seconds
+
+            const clock = document.querySelector('#clock')
+            clock.innerHTML = `${hours}:${minutes}:${seconds} ${iden}`
+        }, 1000)
+    </script>
+</body>
+
+</html>
