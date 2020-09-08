@@ -1,0 +1,96 @@
+@font-face {
+	font-family: Digital;
+	src: url(../fonts/digital-7.ttf);
+}
+body {
+	display: flex;
+	justify-content: center;
+	background: #313131;
+	align-items: center;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#room {
+	padding: 15px;
+	transition: ease all 0.5s;
+	width: 400px;
+	height: 600px;
+	border-radius: 15px;
+	display: block;
+	position: relative;
+}
+#room p {
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	margin: 0;
+}
+#room h1 {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+}
+#room h2#clock {
+	color: #fff;
+	text-align: center;
+	font-size: 80px;
+	font-family: Digital;
+}
+#room.on {
+	background: #50bdff;
+	box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+}
+#room.on #bulb {
+	background: #fff;
+	box-shadow: 0 0 50px white;
+}
+#room.on #switch .button {
+	background: #50bdff;
+	margin-left: 50px;
+}
+#room.off {
+	background: #2f6587;
+}
+#room.off #bulb {
+	background: #1d3d52;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+#room.off #switch .button {
+	background: #2f6587;
+	margin-left: 0;
+}
+#room #bulb {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 100px 0 0 150px;
+}
+#room #switch_box {
+	display: flex;
+	justify-content: center;
+}
+#room #switch_box #switch {
+	padding: 5px;
+	height: 30px;
+	width: 80px;
+	background: #fff;
+	position: absolute;
+	margin: 0 auto;
+	bottom: 30px;
+	border-radius: 50px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: ease all 0.3s;
+}
+#room #switch_box #switch .button {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	transition: ease all 0.3s;
+}
+
+/*# sourceMappingURL=styles.css.map */
